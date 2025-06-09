@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revel vibes Web</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+  <nav class="navbar">
+    <div class="logo">revelvibes</div>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#tienda">Tienda</a></li>
+      <li><a href="#info">Info</a></li>
+      <li><a href="#login">Login</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li> 
+    </a></li>
+  
+    </ul>
+  </nav>
+
+  <header class="hero-video" id="inicio">
+    <video class="bg-video" autoplay loop muted>
+      <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4" />
+      Tu navegador no soporta videos HTML5.
+    </video>
+    <div class="hero-overlay">
+      <h1>Explota Tu Energía</h1>
+      <p>Vive al máximo con revelvibes</p>
+    </div>
+  </header>
+
+
+  <section class="tienda" id="tienda">
+    <h2 class="section-title">Tienda Online</h2>
+    <div class="cards">
+      <div class="card hover-card">
+        <img src="img/Producto1.jpg" alt="Bebida sabor toronja">
+        <h3>Z-TRON TORONJA</h3>
+        <p>$1.35 USD</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Bebida sabor toronja', 1.35)">Agregar al carrito</button>
+      </div>
+      <div class="card hover-card">
+        <img src="img/Producto2.jpg" alt="Bebida sabor cereza">
+        <h3>REDBURN CEREZA</h3>
+        <p>$1.35 USD</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Bebida sabor cereza Oficial', 1.35)">Agregar al carrito</button>
+      </div>
+      <div class="card hover-card">
+        <img src="img/Producto3.jpg" alt="Bebida sabor manzana verde">
+        <h3>GNE-Z MANZANA VERDE/h3>
+        <p>$1.35 USD</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Bebida sabor manzana verde', 1.35)">Agregar al carrito</button>
+      </div>
+      <div class="card hover-card">
+        <img src="img/Producto4.jpg" alt="Bebida sabor mango">
+        <h3>D-R4VE MANGO</h3>
+        <p>$1.35 USD</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Bebida sabor mango', 1.35)">Agregar al carrito</button>
+      </div>
+      <div class="card hover-card">
+        <img src="img/Producto5.jpg" alt="Bebida sabor mora azul">
+        <h3>LBLUBLACK MORA AZUL</h3>
+        <p>$1.35 USD</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Bebida sabor mora azul', 1.35)">Agregar al carrito</button>
+      </div>
+      <div class="card hover-card">
+        <img src="img/Producto6.jpg" alt="Pack 6 latas">
+        <h3>Pack 6 Latas</h3>
+        <p>$8.10 USD</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Pack 6 Latas', 8.10)">Agregar al carrito</button>
+      </div>
+  
+      <div class="card hover-card">
+        <img src="img/Producto8.jpg" alt="Gorra revelvibes">
+        <h3>Gorra revelvibes</h3>
+        <p>$15.00 USD</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Gorra revelvibes', 15.00)">Agregar al carrito</button>
+      </div>
+
+      <div class="card hover-card">
+        <img src="img/Producto7.jpg" alt="Playera Oficial">
+        <h3>hoodie Oficial</h3>
+        <p>$25.00 USD</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('hoodie Oficial', 25.00)">Agregar al carrito</button>
+      </div>
+      <button id="comprarBtn" style="margin-top: 2rem; padding: 1rem 2rem; background:lime; color:black; font-weight:bold; border:none; border-radius:10px; cursor:pointer;">Comprar</button>
+  <p id="mensajeCompra" style="display:none; color:lime; font-weight:bold;">🛒 ¡Compra exitosa!</p>
+</section>
+
+  <section class="carrito">
+    <h2 class="section-title">🛒 Carrito</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+    <p>Items: <span id="cart-count">0</span></p>
+  </section>
+  <section class="slider-container">
+    <div class="slide active" style="background-image: url('https://th.bing.com/th/id/OIP.pBPTrdSdvmoRH8qFa-2PawHaE8?r=0&rs=1&pid=ImgDetMain');"></div>
+    <div class="slide" style="background-image: url('https://th.bing.com/th/id/OIP.jpwQoeXNK4T2sG7sIQtLZAHaEf?r=0&rs=1&pid=ImgDetMain');"></div>
+    <div class="slide" style="background-image: url('https://th.bing.com/th/id/OIP.UuLF23KkXmcI9d_5U6e9xgHaEo?r=0&rs=1&pid=ImgDetMain');"></div>
+    <div class="slide" style="background-image: url('https://th.bing.com/th/id/R.49341046f1e294c56897264f777f0de4?rik=jCkuj22MoYYnkQ&pid=ImgRaw&r=0');"></div>
+    <div class="slide" style="background-image: url('https://th.bing.com/th/id/OIP.FxnzUIvakrUpyVOgpDLpCwHaE8?r=0&rs=1&pid=ImgDetMain');"></div>
+    <div class="slide" style="background-image: url('https://th.bing.com/th/id/OIP.ihAZKZYfLsQmyaYsi0WOsAHaE7?r=0&rs=1&pid=ImgDetMain');"></div>
+</section>
+<section class="videos-section">
+  <h2 class="videos-title">Explora Nuestros Videos</h2>
+<video width="640" height="480" controls>
+  <source src="./esta.mp4" type="video/mp4">
+  Tu navegador no soporta la etiqueta de video.
+</video>
+  <video width="640" height="480" controls>
+  <source src="mama.mp4" type="video/mp4">
+  Tu navegador no soporta la etiqueta de video.
+</video>
+<video width="640" height="480" controls>
+  <source src="mamasita.mp4" type="video/mp4">
+  Tu navegador no soporta la etiqueta de video.
+</video>
+<video width="640" height="480" controls>
+  <source src="qso.mp4" type="video/qso.mp4">
+  Tu navegador no soporta la etiqueta de video.
+</video>
+</section>
+
+  <section class="login-section">
+    <h2>Inicio de Sesión</h2>
+    <form id="loginForm">
+      <input type="text" id="nombre" placeholder="Nombre completo" required><br>
+      <input type="email" id="email" placeholder="Correo electrónico" required><br>
+      <input type="text" id="direccion" placeholder="Dirección" required><br>
+      <input type="text" id="ciudad" placeholder="Ciudad" required><br>
+      <input type="text" id="codigoPostal" placeholder="Código Postal" required><br>
+      <input type="password" id="password" placeholder="Contraseña" required><br>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+    <p id="mensajeLogin" style="display:none; color:lime; font-weight:bold;">✔️ Has iniciado sesión correctamente</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 revelvibes Inc. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- AVISO flotante -->
+  <div id="aviso" style="display:none; position:fixed; bottom:20px; right:20px; background:lime; color:black; padding:1rem 1.5rem; border-radius:10px; box-shadow:0 0 15px lime; z-index:9999; font-weight:bold; opacity:0; transition:opacity 0.5s, transform 0.5s;">
+    ✅ Producto añadido al carrito
+  </div>
+
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: { delay: 4000 },
+      pagination: { el: '.swiper-pagination' }
+    });
+
+    let carrito = [];
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      actualizarCarrito();
+      mostrarAviso();
+    }
+
+    function actualizarCarrito() {
+      const lista = document.getElementById('cart-items');
+      const total = document.getElementById('cart-total');
+      const count = document.getElementById('cart-count');
+
+      lista.innerHTML = '';
+      let suma = 0;
+      carrito.forEach((item, i) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nombre} - $${item.precio.toFixed(2)}`;
+        lista.appendChild(li);
+        suma += item.precio;
+      });
+
+      total.textContent = suma.toFixed(2);
+      count.textContent = carrito.length;
+    }
+
+    function mostrarAviso() {
+      const aviso = document.getElementById('aviso');
+      aviso.style.display = 'block';
+      aviso.style.opacity = '1';
+      aviso.style.transform = 'translateY(0)';
+      setTimeout(() => {
+        aviso.style.opacity = '0';
+        aviso.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          aviso.style.display = 'none';
+        }, 500);
+      }, 2000);
+    }
+    let current = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000); // Cambia cada 5 segundos
+  // Inicio de sesión
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('mensajeLogin').style.display = 'block';
+  });
+
+  // Compra exitosa
+  document.getElementById('comprarBtn').addEventListener('click', function() {
+    document.getElementById('mensajeCompra').style.display = 'block';
+    setTimeout(() => {
+      document.getElementById('mensajeCompra').style.display = 'none';
+    }, 4000);
+  });
+  var canvas = document.getElementById("canvas");
+var width = window.innerWidth;
+var height = window.innerHeight/3*2;
+var Ctx = initCanvas(canvas, width, height)
+
+function initCanvas (canvas, width, height){
+  canvas.width=width;
+  canvas.height=height;
+  return canvas.getContext("2d")
+}
+
+class pixel {
+  sb;
+  x;
+  y;
+  color = "black";
+  update = function (){};
+  type=0;
+}
+
+class sandbox {
+  ctx;
+  sizeX;
+  sizeY;
+  countX;
+  cointY;
+  empty = new pixel();
+  
+  box = [];
+  
+  init (ctx, sizeX, sizeY, countX, countY){
+    this.ctx=ctx;
+    this.sizeX = sizeX;
+    this.sizeY = sizeY;
+    this.countX = Math.floor(countX);
+    this.countY = Math.floor(countY);
+    this.setUpBox();
+  }
+  
+  setUpBox (){
+    for(var x = 0;x<=this.countX;x++){
+      this.box.push([]);
+      for(var y = 0;y<=this.countY;y++){
+        var pxl = new pixel();
+        pxl.sb=this;
+        pxl.x=x;
+        pxl.y=y;
+        this.box[x].push(pxl);
+      }
+    }
+  }
+  
+  update (){
+    var update = [];
+    for(var x = 0;x<this.box.length;x++){
+      for(var y = 0;y<this.box[x].length;y++){
+        update.push(this.box[x][y]);
+      }
+    }
+    this.shuffleArray(update);
+    for(var i = 0;i<update.length;i++){
+      update[i].update();
+    }
+    this.render();
+  }
+  
+  render (){
+    for(var x = 0;x<this.box.length;x++){
+      for(var y = 0;y<this.box[x].length;y++){
+        this.ctx.fillStyle = this.box[x][y].color;
+        this.ctx.fillRect(this.sizeX*x, this.sizeY*y, this.sizeX, this.sizeY)
+      }
+    }
+  }
+  
+  setpxl (pxl, x, y){
+    if(this.getpxl(x, y).type==-1){
+      return;
+    }
+    this.box[x][y] = pxl;
+    this.box[x][y].x = x;
+    this.box[x][y].y = y;
+    this.box[x][y].sb=this;
+  }
+  
+  movepxl (x, y, nx, ny){
+    if(this.getpxl(nx, ny).type==-1){
+      return;
+    }
+    this.box[nx][ny] = this.box[x][y];
+    this.box[x][y] = new pixel();
+    this.box[nx][ny].x = nx;
+    this.box[nx][ny].y = ny;
+  }
+  
+  swappxl(x, y, ox, oy){
+    var p1 = this.getpxl(x, y);
+    var p2 = this.getpxl(ox, oy);
+    this.setpxl(p1, ox, oy);
+    this.setpxl(p2, x, y);
+  }
+  
+  getpxl (x, y){
+    if(x>=this.box.length || x<0 || y>=this.box[0].length || y<0){
+      var p = new pixel();
+      p.type = -1;
+      return p
+    }
+    else{
+      return this.box[x][y]
+    }
+  }
+  
+  shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+  }
+}
+
+const stdBlocks = {
+  
+  empty: function (){
+    var p = new pixel()
+    return p;
+  },
+  ground: function (){
+    var p = new pixel();
+    p.type=1;
+    p.color = "#795548";
+    p.update = function (){};
+    return p;
+  },
+  water: function (){
+    var p = new pixel();
+    p.type=2;
+    p.color = "#2196F3";
+    p.update = function (){
+      var r = false;
+      var l = false;
+      var d = false;
+      if(this.sb.getpxl(this.x, this.y+1).type==0){
+        d=true;
+      }
+      else if(this.sb.getpxl(this.x+1, this.y+1).type==0 && this.sb.getpxl(this.x+1, this.y).type==0){
+        r=true;
+      }
+      else if(this.sb.getpxl(this.x-1, this.y+1).type==0 && this.sb.getpxl(this.x-1, this.y).type==0){
+        l=true
+      }
+      
+      if(d){
+        this.sb.movepxl(this.x, this.y, this.x, this.y+1);
+      }
+      else if(r&&l){
+        if(Math.floor(Math.random()*2)==0){
+          this.sb.movepxl(this.x, this.y, this.x+1, this.y)
+        }
+        else{
+          this.sb.movepxl(this.x, this.y, this.x-1, this.y)
+        }
+      }
+      else if(r){
+        this.sb.movepxl(this.x, this.y, this.x+1, this.y)
+      }
+      else if(l){
+        this.sb.movepxl(this.x, this.y, this.x-1, this.y)
+      }
+      else{
+        var r = Math.floor(Math.random()*3)
+        if(r==0 && this.sb.getpxl(this.x-1, this.y).type==0){
+          this.sb.movepxl(this.x, this.y, this.x-1, this.y)
+        }
+        if(r==2 && this.sb.getpxl(this.x+1, this.y).type==0){
+          this.sb.movepxl(this.x, this.y, this.x+1, this.y)
+        }
+      }
+      
+    };
+    return p;
+  },
+  oil: function (){
+    var p = new pixel();
+    p.type=3;
+    p.color = "#9E9E9E";
+    p.update = function (){
+      var r = false;
+      var l = false;
+      var d = false;
+      if(this.sb.getpxl(this.x, this.y-1).type==2){
+        this.sb.swappxl(this.x, this.y, this.x, this.y-1)
+      }
+      if(this.sb.getpxl(this.x, this.y+1).type==0){
+        d=true;
+      }
+      else if(this.sb.getpxl(this.x+1, this.y+1).type==0 && this.sb.getpxl(this.x+1, this.y).type==0){
+        r=true;
+      }
+      else if(this.sb.getpxl(this.x-1, this.y+1).type==0 && this.sb.getpxl(this.x-1, this.y).type==0){
+        l=true
+      }
+      
+      if(d){
+        this.sb.movepxl(this.x, this.y, this.x, this.y+1);
+      }
+      else if(r&&l){
+        if(Math.floor(Math.random()*2)==0){
+          this.sb.movepxl(this.x, this.y, this.x+1, this.y)
+        }
+        else{
+          this.sb.movepxl(this.x, this.y, this.x-1, this.y)
+        }
+      }
+      else if(r){
+        this.sb.movepxl(this.x, this.y, this.x+1, this.y)
+      }
+      else if(l){
+        this.sb.movepxl(this.x, this.y, this.x-1, this.y)
+      }
+      else{
+        var r = Math.floor(Math.random()*3)
+        if(r==0 && this.sb.getpxl(this.x-1, this.y).type==0){
+          this.sb.movepxl(this.x, this.y, this.x-1, this.y)
+        }
+        if(r==2 && this.sb.getpxl(this.x+1, this.y).type==0){
+          this.sb.movepxl(this.x, this.y, this.x+1, this.y)
+        }
+      }
+      
+    };
+    return p;
+  }
+}
+
+var s = 100;
+var sb = new sandbox();
+sb.init(Ctx, width/s, width/s, s, height/(width/s));
+
+for(var i = 0;i<sb.box.length;i++){
+  sb.setpxl(stdBlocks.ground(), i, 50);
+}*/
+
+sb.setpxl(stdBlocks.water(), Math.floor(Math.random()*50), 0)
+function water (){
+for(var x = 0;x<10;x++){
+  for(var y = 0;y<10;y++){
+    sb.setpxl(stdBlocks.water(), x+20, y);
+  }
+} 
+window.setTimeout(water, 2000)
+}
+water()*/
+sb.render();
+
+function update (){
+  sb.update();
+  window.setTimeout(update.bind(this), 50)
+}
+update();
+
+var select = "water";
+
+canvas.addEventListener("touchstart", touchStart.bind(this), false);
+  canvas.addEventListener("touchmove", touchMove.bind(this), false);
+
+function touchStart(evt) {
+  var touches = evt.changedTouches;
+  for (var i = 0; i < touches.length; i++) {
+    for(var x = -1;x<2;x++){
+      for(var y = -1;y<2;y++){
+        sb.setpxl(stdBlocks[select](), Math.floor(touches[i].pageX/sb.sizeX)+x, Math.floor(touches[i].pageY/sb.sizeY)+y)
+      }
+    }
+  }
+}
+
+function touchMove(evt) {
+  var touches = evt.changedTouches;
+  for (var i = 0; i < touches.length; i++) {
+    for(var x = -1;x<2;x++){
+      for(var y = -1;y<2;y++){
+        sb.setpxl(stdBlocks[select](), Math.floor(touches[i].pageX/sb.sizeX)+x, Math.floor(touches[i].pageY/sb.sizeY)+y)
+      }
+    }
+  }
+}
+  </script>
+</body>
+</html>
