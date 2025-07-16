@@ -30,13 +30,22 @@ document.getElementById("comprarBtn").addEventListener("click", () => {
 
   const total = cartTotal.textContent;
   const productos = carrito.map(p => `- ${p.nombre}: $${p.precio.toFixed(2)}`).join('%0A');
-  const cuerpoMensaje = `¡Hola! Estoy interesado en comprar en RebelVibes.%0A%0AProductos:%0A${productos}%0A%0ATotal: $${total}%0A%0AIngresa tu dirección para el envío. Gracias.`;
 
-  const mailto = `https://mail.google.com/mail/?view=cm&fs=1&to=mceleste2r@gmail.com&su=Interesado%20en%20RebelVibes&body=${cuerpoMensaje}`;
+  const asunto = encodeURIComponent("Interesado en RebelVibes");
+  const cuerpo = encodeURIComponent(`¡Hola! Estoy interesado en comprar en RebelVibes.
 
-  window.open(mailto, '_blank'); // Abre Gmail en una nueva pestaña
+Productos:
+${carrito.map(p => `- ${p.nombre}: $${p.precio.toFixed(2)}`).join('\n')}
 
-  // Mostrar mensaje de compra exitosa (opcional)
+Total: $${total}
+
+Ingresa tu dirección para el envío. Gracias.`);
+
+  const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=mceleste2r@gmail.com&su=${asunto}&body=${cuerpo}`;
+
+  window.open(gmailURL, "_blank");
+
+  // Mensaje de compra exitosa (opcional)
   mensajeCompra.style.display = "block";
   setTimeout(() => {
     mensajeCompra.style.display = "none";
