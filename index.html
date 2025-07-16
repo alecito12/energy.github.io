@@ -39,49 +39,54 @@
 
 
  <section class="tienda" id="tienda">
-  <h2 class="section-title">Tienda Online</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="Producto1.jpg" alt="Bebida sabor toronja">
-      <h3>Z-TRON TORONJA</h3>
-      <button class="btn-neon" onclick="agregarAlCarrito('Z-TRON TORONJA', 1.35)">Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="Producto2.jpg" alt="Bebida sabor cereza">
-      <h3>REDBURN CEREZA</h3>
-      <button class="btn-neon" onclick="agregarAlCarrito('REDBURN CEREZA', 1.35)">Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="Producto3.jpg" alt="Bebida sabor manzana verde">
-      <h3>GNE-Z MANZANA VERDE</h3>
-      <button class="btn-neon" onclick="agregarAlCarrito('GNE-Z MANZANA VERDE', 1.35)">Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="Producto4.jpg" alt="Bebida sabor mango">
-      <h3>D-R4VE MANGO</h3>
-      <button class="btn-neon" onclick="agregarAlCarrito('D-R4VE MANGO', 1.35)">Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="Producto5.jpg" alt="Bebida sabor mora azul">
-      <h3>LBLUBLACK MORA AZUL</h3>
-      <button class="btn-neon" onclick="agregarAlCarrito('LBLUBLACK MORA AZUL', 1.35)">Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="Producto6.jpg" alt="Pack 6 Latas">
-      <h3>Pack 6 Latas</h3>
-      <button class="btn-neon" onclick="agregarAlCarrito('Pack 6 Latas', 8.10)">Agregar al carrito</button>
-    </div>
-  </div>
-  <button id="comprarBtn">Comprar</button>
-  <p id="mensajeCompra">🛒 ¡Compra exitosa!</p>
+    <h2 class="section-title">Tienda Online</h2>
+    <div class="cards">
+      <div class="card hover-card">
+        <img src="Producto1.jpg" alt="Bebida sabor toronja">
+        <h3>Z-TRON TORONJA</h3>
+        <p>~</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Bebida sabor toronja', 1.35)">Agregar al carrito</button>
+      </div>
+      <div class="card hover-card">
+        <img src="Producto2.jpg" alt="Bebida sabor cereza">
+        <h3>REDBURN CEREZA</h3>
+        <p>~</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Bebida sabor cereza Oficial', 1.35)">Agregar al carrito</button>
+      </div>
+      <div class="card hover-card">
+        <img src="Producto3.jpg" alt="Bebida sabor manzana verde">
+        <h3>GNE-Z MANZANA VERDE/h3>
+        <p>~</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Bebida sabor manzana verde', 1.35)">Agregar al carrito</button>
+      </div>
+      <div class="card hover-card">
+        <img src="Producto4.jpg" alt="Bebida sabor mango">
+        <h3>D-R4VE MANGO</h3>
+        <p>~</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Bebida sabor mango', 1.35)">Agregar al carrito</button>
+      </div>
+      <div class="card hover-card">
+        <img src="Producto5.jpg" alt="Bebida sabor mora azul">
+        <h3>LBLUBLACK MORA AZUL</h3>
+        <p>~</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Bebida sabor mora azul', 1.35)">Agregar al carrito</button>
+      </div>
+      <div class="card hover-card">
+        <img src="Producto6.jpg" alt="Pack 6 latas">
+        <h3>Pack 6 Latas</h3>
+        <p>~</p>
+        <button class="btn-neon" onclick="agregarAlCarrito('Pack 6 Latas', 8.10)">Agregar al carrito</button>
+      </div>
+      <button id="comprarBtn" style="margin-top: 2rem; padding: 1rem 2rem; background:lime; color:black; font-weight:bold; border:none; border-radius:10px; cursor:pointer;">Comprar</button>
+  <p id="mensajeCompra" style="display:none; color:lime; font-weight:bold;">🛒 ¡Compra exitosa!</p>
 </section>
 
-<section class="carrito">
-  <h2 class="section-title">🛒 Carrito</h2>
-  <ul id="cart-items"></ul>
-  <p>Total: $<span id="cart-total">0.00</span></p>
-  <p>Items: <span id="cart-count">0</span></p>
-</section>
+  <section class="carrito">
+    <h2 class="section-title">🛒 Carrito</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+    <p>Items: <span id="cart-count">0</span></p>
+  </section> 
   <section class="slider-container">
     <div class="slide active" style="backgroud-image: url('https://th.bing.com/th/id/OIP.pBPTrdSdvmoRH8qFa-2PawHaE8?r=0&rs=1&pid=ImgDetMain');"></div>
     <div class="slide" style="background-image: url('https://th.bing.com/th/id/OIP.jpwQoeXNK4T2sG7sIQtLZAHaEf?r=0&rs=1&pid=ImgDetMain');"></div>
